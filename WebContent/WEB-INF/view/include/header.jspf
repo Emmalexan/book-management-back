@@ -1,0 +1,45 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<title>${pageTitle}</title>
+<!-- reference our style sheet -->
+<link type="text/css" rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/style.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/semantic.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="${pageContext.request.contextPath}/resources/js/semantic.min.js"></script>	
+
+</head>
+<body>
+
+	<h2>Σύστημα Διαχείρισης Συγγραμμάτων</h2>
+	
+	
+	<sec:authorize access="isAuthenticated()">
+		<form action="${pageContext.request.contextPath}/logout" method="post">
+			<input value="Logout" type="submit">
+		</form>
+		<form action="${pageContext.request.contextPath}/firstPage" method="get">
+			<input value="First Page" type="submit">
+		</form>
+		
+		<sec:authorize access="hasAnyRole('PUBLISHER','TEACHER','STUDENT','SECRETARY')">
+		<form action="${pageContext.request.contextPath}/profile" method="get">
+			<input value="My Profile" type="submit">
+		</form>
+		</sec:authorize>
+		
+		
+	</sec:authorize>
+	
+	
+	<div class="ui container">

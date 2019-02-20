@@ -77,29 +77,6 @@ public class PublisherController {
 		return "redirect:/publisher/mytextbooks/"+t;  
 	}
 
-
-	
-	@GetMapping("/students")
-	public String listStudents(Model model) {
-		
-		// get students from the service
-		List<Student> students = studentService.getStudents();
-		Student student = new Student();
-		// add the students to the model
-		model.addAttribute("students",students);
-		model.addAttribute("student",student);
-		
-		HttpSession currentSession = request.getSession();
-		String message = (String) currentSession.getAttribute("message");
-		model.addAttribute("message",message);
-		// add page title
-		model.addAttribute("pageTitle", "List of Students");
-		return "list-students";
-	}
-	
-
-	
-	
 	@RequestMapping(value="/findStudent", method=RequestMethod.POST)
 	public String FindStudent(@RequestParam("passnum") int number,Model model) {
 			System.out.println(number);
@@ -114,6 +91,7 @@ public class PublisherController {
 					currentSession.setAttribute("student_id",sid);
 					
 					int t = (int) currentSession.getAttribute("student_id");
+					
 					
 					return "redirect:/publisher/studentProfile/"+t;
 				}
@@ -138,6 +116,7 @@ public class PublisherController {
 		Student student = studentService.getStudent(stid);
 		
 		List<TextBookProfile> textbookprofiles = textbookService.getTextBookProfiles();
+	
 		
 		model.addAttribute("stid", stid);
 		model.addAttribute("student", student);
@@ -297,6 +276,31 @@ public class PublisherController {
 		textbookService.updateTextBook(textbook);
 		return "redirect:/publisher/mytextbooks/"+ t;  
 	} 
+	
+	@GetMapping("/students")
+	public String listStudents(Model model) {
+		
+		
+		// get students from the service
+		List<Student> students = studentService.getStudents();
+		Student student = new Student();
+		List<TextBookProfile> textbookprofiles = textbookService.getTextBookProfiles();
+		// add the students to the model
+		model.addAttribute("students",students);
+		model.addAttribute("student",student);
+		model.addAttribute("textbookprofiles",textbookprofiles);
+		
+		
+		HttpSession current1 = request.getSession();
+		int pub_id = (int) current1.getAttribute("publisher_id");
+		model.addAttribute("pub_id",pub_id);
+		HttpSession current2 = request.getSession();
+		String message = (String) current2.getAttribute("message");
+		model.addAttribute("message",message);
+		// add page title
+		model.addAttribute("pageTitle", "List of Students");
+		return "list-students";
+	}
 	
 	
 }

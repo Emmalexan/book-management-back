@@ -54,28 +54,14 @@ System.out.println("eimai sth authedication");
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		System.out.println("http security");
-		/*http.authorizeRequests().anyRequest().authenticated().and().formLogin().loginPage("/login")
-				.loginProcessingUrl("/authUser").permitAll().and().logout().logoutSuccessUrl("/login").permitAll()
-			    .and()
-			    .csrf().disable();*/
+		
 		http.authorizeRequests().anyRequest().authenticated().and().formLogin().loginPage("/login")
 		.loginProcessingUrl("/authUser").permitAll().and().logout().logoutSuccessUrl("/login").permitAll()
 	    .and()
 	    .csrf().disable();
 		
 		
-		//.logoutSuccessUrl("/login")
-				//.and().exceptionHandling()
-				//.accessDeniedPage("/403");
-		
-	//	http.authorizeRequests()
-	//	.antMatchers("/teacher/*").hasRole("TEACHER")
-	//	.antMatchers("/publicher/*").hasRole("PUBLISHER")
-	//	.antMatchers("/student/*").hasRole("STUDENT")
-	//	.antMatchers("/secretary/*").hasRole("SECRETARY")
-	//	.antMatchers("/systems/**").hasRole("ADMIN")
-	//	.and()
-	//	.formLogin();  
+		 
 			
 }
 	

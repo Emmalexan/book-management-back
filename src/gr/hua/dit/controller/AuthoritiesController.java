@@ -75,7 +75,7 @@ public class AuthoritiesController {
 				tempuser.setUserName(users.get(i).getUserName());
 				tempuser.setAuthoritie(author);
 				userService.updateUser(tempuser);
-				break;
+				//break;
 			}
 		}
 		}
@@ -163,7 +163,7 @@ public class AuthoritiesController {
 		List<Authorities> roles = authoritiesService.getAuthorities();
 		for(Authorities r : roles) {
 			if(r.getAuthority().equals(role.getAuthority())) {
-				model.addAttribute("message", "This Role already exist " + role.getAuthority());
+				model.addAttribute("message", "Αυτός ο ρόλος υπάρχει ήδη " + role.getAuthority());
 				return "error";
 			}
 		}

@@ -57,7 +57,7 @@ public class LoginController {
 	  public String index(Model model, Principal principal) {
 		System.out.println("sthn index");
 		model.addAttribute("pageTitle", "Welcome Page");
-	    model.addAttribute("message", "You are logged in as " );
+	    model.addAttribute("message", "Έχετε συνδεθεί ως" );
 	    User user = userService.getUser(principal.getName());
 	    
 	    model.addAttribute("firstName",user.getFirstName());
@@ -172,12 +172,11 @@ public class LoginController {
 	}
 
 
-
-	@PostMapping("/checkoutPage")
-	public String CheckoutPage(@ModelAttribute("userform") User userform, Model model) {
-
-		model.addAttribute("userform", userform);
-		return "CheckoutPage";
+	@GetMapping("/termsOfUse")
+	public String TermsOfUsePage(Model model) {
+		
+		model.addAttribute("pageTitle", "Terms Of Use Page");
+		return "terms-use";
 	}
 
 

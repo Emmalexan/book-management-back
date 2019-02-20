@@ -121,12 +121,14 @@ public class FunctionController {
 	public String chooseRoleForFunction(Model model, @PathVariable("functid") int functid) {
 		// get the user
 		//Function function = functionService.getFunction(functid);
+		Function fct = functionService.getFunction(functid);
 		
 		List<Authorities> auths = authoritiesService.getAuthorities();
 		Authorities auth = new Authorities();
 		model.addAttribute("auth", auth);
 		model.addAttribute("auths", auths);
 		model.addAttribute("functid", functid);
+		model.addAttribute("fct", fct);
 		
 		return "function-role-form";
 		//return "select-roleUser";

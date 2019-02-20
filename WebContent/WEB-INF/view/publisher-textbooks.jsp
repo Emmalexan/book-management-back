@@ -1,3 +1,22 @@
+<style>
+		.link{
+			display: block;
+
+			text-align: center;
+			padding: 5px;
+			text-decoration: none; float:left;
+             margin-right:10px; 
+             background-color: #F2F2F2;
+            
+		}
+
+		.link :hover {
+			background-color:#6E6E6E;
+		}
+       
+</style>
+
+	
 	<div id="ui segment">
 		<div id="header">
 			<h3>Τα Συγγράμματά Μου</h3>
@@ -28,9 +47,9 @@
 						
 
 <td><button type="submit" id="${tempTextbook.id}"  name="deleteTextBook"><i class="remove user icon"></i>Διαγραφή</button>
-						<td><a href="<c:url value="/publisher/deliveryPoint/${tempTextbook.id}"></c:url>">Σημείο Παράδοσης</a></td>
+						<a class="link" href="<c:url value="/publisher/deliveryPoint/${tempTextbook.id}"></c:url>">Σημείο Παράδοσης</a>
 					 
-					<td><a href="<c:url value="/publisher/viewtextbook/${tempTextbook.id}"></c:url>"><i class="unhide icon"></i>View</a></td>
+					<a class="link" href="<c:url value="/publisher/viewtextbook/${tempTextbook.id}"></c:url>"><i class="unhide icon"></i>View</a></td>
 					
 					
 					</tr>
@@ -46,6 +65,9 @@
 		
 		<script type="text/javascript">
 	$("[name='deleteTextBook']").click(function() {
+		if (confirm("θέλετε να διαγράψετε αυτό το σύγγραμμα;")) {
+		    txt = "You pressed OK!";
+		    
 		var urlCall = "<c:url value="/publisher/delete/"></c:url>";
 		$.ajax({
 			url : urlCall + $(this).attr('id'),
@@ -58,6 +80,11 @@
 				console.log(result);
 			},
 		});
+		
+		} else {
+		    txt = "You pressed Cancel!";
+	 }
+		document.getElementById("demo").innerHTML = txt;
 	});
 </script>
 		

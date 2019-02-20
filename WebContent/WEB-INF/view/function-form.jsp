@@ -2,15 +2,15 @@
 
 <div class="ui segment">
 
-<h3>Add a Function</h3>
+<h3>Προσθήκη Υπηρεσίας</h3>
 
  <form:form action="saveFunction/${functid}/${roleid}" modelAttribute="function" method="POST" class="ui form">
 		<div class="field">
-			<label>Name of Function</label> 
+			<label>Όνομα Υπηρεσίας</label> 
 			<form:input path="functionName"/>
 		</div>
 		
-		<button class="ui button" type="submit">Save</button>
+		<button class="ui button" type="submit">Αποθήκευση</button>
 	</form:form> 
 	
 </div>

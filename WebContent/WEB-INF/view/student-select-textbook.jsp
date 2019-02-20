@@ -68,7 +68,7 @@ function Atleast()
                         j++;
                         if(numberOfCheckedItems == 2 )  
                 		{  
-                        		alert("You can't select more than 1 textbooks!");  
+                        		alert("Δεν μπορείτε να επιλέξετε πάνω απο 2 συγγράμματα!");  
                         		return false;  
                 		}
                          

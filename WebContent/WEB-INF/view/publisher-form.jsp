@@ -3,11 +3,11 @@
 <div class="ui segment">
 <form:form action="${pageContext.request.contextPath}/user/saveDetailsPublisher/${username}/${pid}" modelAttribute="publisher" method="POST" class="ui form">
 		<div class="field">
-			<label>Name of publisher</label> 
+			<label>Όνομα Εκδοτικού Οίκου</label> 
 			<form:input path="publisherName"/>
 		</div>
 		
-		<button class="ui button" type="submit">Save</button>
+		<button class="ui button" type="submit">Αποθήκευση</button>
 	</form:form> 
 	
 </div>

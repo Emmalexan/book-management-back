@@ -1,3 +1,21 @@
+<style>
+		.link{
+			display: block;
+
+			text-align: center;
+			padding: 5px;
+			text-decoration: none; float:left;
+             margin-right:10px; 
+             background-color: #F2F2F2;
+            
+		}
+
+		.link :hover {
+			background-color:#6E6E6E;
+		}
+       
+</style>
+
 <div id="ui segment">
 <sec:authorize access="hasRole('STUDENT')">	
 		<div id="header">	
@@ -38,8 +56,8 @@
 					
 			</table>
 			<br>
-			<a href="<c:url value="/student/${user.student.id}"></c:url>">ΔΗΛΩΣΗ ΜΑΘΗΜΑΤΩΝ</a>
-			<a href="<c:url value="/student/selectedTextbooks/${user.student.id}"></c:url>">Η ΔΗΛΩΣΗ ΜΟΥ</a>
+			<a class="link" href="<c:url value="/student/${user.student.id}"></c:url>">ΔΗΛΩΣΗ ΜΑΘΗΜΑΤΩΝ</a>
+			<a class="link" href="<c:url value="/student/selectedTextbooks/${user.student.id}"></c:url>">Η ΔΗΛΩΣΗ ΜΟΥ</a>
 </sec:authorize>
 <sec:authorize access="hasRole('TEACHER')">	
 <div id="header">
@@ -80,8 +98,8 @@
 					
 			</table>
 			<br>
-			<a href="<c:url value="/teacher/${user.teacher.id}/choose"></c:url>">ΕΠΙΛΟΓΗ ΣΥΓΓΡΑΜΜΑΤΩΝ</a>
-			<a href="<c:url value="/teacher/${user.teacher.id}/view"></c:url>">Η ΔΗΛΩΣΗ ΜΟΥ</a>
+			<a class="link" href="<c:url value="/teacher/${user.teacher.id}/choose"></c:url>">ΕΠΙΛΟΓΗ ΣΥΓΓΡΑΜΜΑΤΩΝ</a>
+			<a class="link" href="<c:url value="/teacher/${user.teacher.id}/view"></c:url>">Η ΔΗΛΩΣΗ ΜΟΥ</a>
 </sec:authorize>
 <sec:authorize access="hasRole('SECRETARY')">	
 <div id="header">
@@ -122,7 +140,7 @@
 					
 			</table>
 			<br>
-			<a href="<c:url value="/secretary/studentStatement"></c:url>">ΔΗΛΩΣΕΙΣ ΦΟΙΤΗΤΩΝ</a>	
+			<a class="link" href="<c:url value="/secretary/studentStatement"></c:url>">ΔΗΛΩΣΕΙΣ ΦΟΙΤΗΤΩΝ</a>	
 </sec:authorize>	
 <sec:authorize access="hasRole('ADMIN')">
 <div id="header">
@@ -152,11 +170,11 @@
 				</tr>
 				
 			</table>
-	<table class="ui celled  striped table">	<tr>	
-			<th><a href="<c:url value="/user/listuser"></c:url>">Χρήστες</a></th>
-		    <th><a href="<c:url value="/authorities/listrole"></c:url>">Ρόλοι Χρηστών</a></th>
-			<th><a href="<c:url value="/function/listfunction"></c:url>">Υποστηριζόμενες Υπηρεσίες</a></th>
-	</table> 
+		
+			<th><a class="link" href="<c:url value="/user/listuser"></c:url>">Χρήστες</a></th>
+		    <th><a class="link" href="<c:url value="/authorities/listrole"></c:url>">Ρόλοι Χρηστών</a></th>
+			<th><a class="link" href="<c:url value="/function/listfunction"></c:url>">Υποστηριζόμενες Υπηρεσίες</a></th>
+	 
 </sec:authorize>
 <sec:authorize access="hasRole('PUBLISHER')">
 <div id="header">
@@ -191,8 +209,8 @@
 					
 			</table>
 			<br>
-				 	<a href="<c:url value="/publisher/mytextbooks/${user.publisher.id}"></c:url>">Τα Συγγράμματα Μου</a> 
-				 	<a href="<c:url value="/publisher/${user.publisher.id}"></c:url>">Προσθήκη Συγγράμματος</a>
-				 	<a href="<c:url value="/publisher/students"></c:url>">Παράδοση Συγγράμματος</a>
+				 	<a class="link" href="<c:url value="/publisher/mytextbooks/${user.publisher.id}"></c:url>">Τα Συγγράμματα Μου</a> 
+				 	<a class="link" href="<c:url value="/publisher/${user.publisher.id}"></c:url>">Προσθήκη Συγγράμματος</a>
+				 	<a class="link" href="<c:url value="/publisher/students"></c:url>">Παράδοση Συγγράμματος</a>
 </sec:authorize>				 	
 		</div>

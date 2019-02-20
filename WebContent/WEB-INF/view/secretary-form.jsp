@@ -2,23 +2,23 @@
 
 <div class="ui segment">
 
-		<h3>Add Details for Secretary</h3>
+		<h3>Προσθήκη Στοιχείων Γραμματείας </h3>
 
  <form:form action="${pageContext.request.contextPath}/user/saveDetailsSecretary/${username}/${secid}" modelAttribute="secretary" method="POST" class="ui form">
 		<div class="field">
-			<label>Department</label> 
+			<label>Τμήμα</label> 
 			<form:input path="departmentName"/>
 		</div>
 		<div class="field">
-			<label>Working State</label>
+			<label>Κατάσταση Εργασίας</label>
 			<form:input path="workingState"/>
 		</div>
 		<div class="field">
-			<label>Year of recruitment</label> 
+			<label>Έτος Πρόσληψης</label> 
 			<form:input path="yearOfRecruitment"/>
 		</div>
 		
-		<button class="ui button" type="submit">Save</button>
+		<button class="ui button" type="submit">Αποθήκευση</button>
 	</form:form> 
 	
 </div>

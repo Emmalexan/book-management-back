@@ -11,6 +11,6 @@
 									<form:input path="receivingPoint"/>
 								</div>
 							
-								<button class="ui button" type="submit">Save</button>
+								<button class="ui button" type="submit">Αποθήκευση</button>
 							</form:form>
 				</div>

@@ -5,7 +5,7 @@
 <form:form modelAttribute="auth" action="${pageContext.request.contextPath}/function/saveRoleFunction/${functid}" method="get" >
 	<table>
     <tr>
-    	<th>Select a Role for the Function</th>
+    	<th>Επιλέξτε έναν ρόλο που μπορεί να εκτελέσει την υπηρεσία : ${fct.functionName} </th> 
 
  		<td><form:select  path="authority">
     	<form:option value="NONE"> --SELECT--</form:option>
@@ -15,7 +15,7 @@
   	</tr>
   	
     <tr>
-    <td><input type="submit" value="Select"/></td>
+    <td><input type="submit" value="Αποθήκευση"/></td>
     </tr>
 
     </table>

@@ -10,7 +10,7 @@
 	<h3>Welcome ${firstName}</h3>
 	<table class="ui celled  striped table">
 		<tr>${message}
-	 		User: <sec:authentication property="principal.username" /> with Role: <sec:authentication property="principal.authorities"/>
+	 		User: <sec:authentication property="principal.username" /> με Ρόλο: <sec:authentication property="principal.authorities"/>
 		<tr>	
 			<br><br>
 		<tr>	<form action="${pageContext.request.contextPath}/firstPage" method="get">

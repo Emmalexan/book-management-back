@@ -3,13 +3,16 @@
 	<div id="header">
 	<sec:authorize access="hasRole('PUBLISHER')">	
 		<h3>Παράδοση Συγγραμμάτων</h3>
+		
+		
 	</sec:authorize>
 	<sec:authorize access="hasRole('SECRETARY')">
 		<h3>Κατάσταση Δήλωσης</h3>	
 	</sec:authorize>
 	</div>
 				<sec:authorize access="hasRole('PUBLISHER')">	
-				 	<a href="<c:url value="/publisher/students"></c:url>">Υπόλοιποι Φοιτητές</a>
+				 	<a href="<c:url value="/publisher/students"></c:url>">Υπόλοιποι Φοιτητές</a> <br>
+				 	<h4> Δήλωση Φοιτητή : ${student.user.firstName} ${student.user.lastName} με αριθμό πάσου : ${student.passNumber}</h4>
 				 </sec:authorize>	
 			<table class="ui celled  striped table">
 				<tr>

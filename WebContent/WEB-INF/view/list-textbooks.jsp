@@ -1,4 +1,20 @@
+<style>
+		.link{
+			display: block;
 
+			text-align: center;
+			padding: 5px;
+			text-decoration: none; float:left;
+             margin-right:10px; 
+             background-color: #F2F2F2;
+            
+		}
+
+		.link :hover {
+			background-color:#6E6E6E;
+		}
+       
+</style>
 
 	<div id="ui segment">
 		<div id="header">
@@ -25,11 +41,11 @@
 						<td>${tempTextBook.publishername}</td>
 						<td>${tempTextBook.isbn}</td>
 						<td><button type="submit" id="${tempTextBook.id}"  name="deleteTextBook"><i class="remove user icon"></i>Delete</button>
-					 <a href="<c:url value="/textbook/${tempTextBook.id}"></c:url>"><i class="unhide icon"></i>View</a>
+					 <a class="link" href="<c:url value="/textbook/${tempTextBook.id}"></c:url>"><i class="unhide icon"></i>View</a>
 				
 					</tr>
 				</c:forEach>
-				 <a href="<c:url value="/textbook/0"></c:url>"><i class="unhide icon"></i>Add</a>
+				 <a class="link" href="<c:url value="/textbook/0"></c:url>"><i class="unhide icon"></i>Add</a>
 				
 			</table>
 		</div>

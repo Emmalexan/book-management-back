@@ -2,29 +2,29 @@
 
 <div class="ui segment">
 
-<h3>Add a Textbook</h3>
+<h3>Προσθήκη Βιβλίου</h3>
  <form:form action="${pageContext.request.contextPath}/publisher/update/${idTextbook}" modelAttribute="textbook"  method="POST" class="ui form">
 		<div class="field">
-			<label>Title</label> 
+			<label>Τίτλος</label> 
 			<form:input path="title"/>
 		</div>
 		<div class="field">
-			<label>Writer</label>
+			<label>Συγγραφέας</label>
 			<form:input path="writer"/>
 		</div>
 		<div class="field">
-			<label>Year of publishing</label> 
+			<label>Έτος Έκδοσης</label> 
 			<form:input path="year"/>
 		</div>
 		<div class="field">
-			<label>Name of publisher</label> 
+			<label>Εκδοτικός Οίκος</label> 
 			<form:input path="publishername"/>
 		</div>
-		<div class="Number ISBN">
+		<div class="Αριθμός ISBN">
 			<label>ISBN</label> 
 			<form:input path="isbn"/>
 		</div>
-		<button class="ui button" type="submit">Save</button>
+		<button class="ui button" type="submit">Αποθήκευση</button>
 	</form:form> 
 </div>
 

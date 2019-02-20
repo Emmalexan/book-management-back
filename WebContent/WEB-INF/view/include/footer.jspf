@@ -1,9 +1,41 @@
 
+<style>
+			.container {
+				display: -webkit-flex;
+				display: flex;  
+				-webkit-flex-flow: row wrap;
+				flex-flow: row wrap;
+				text-align: center;
+				
+			
+			}
 
-</div>
+			.container > * {
+				padding: 15px;
+				-webkit-flex: 1 100%;
+				flex: 1 100%;
+			}
+			.footer{
+			position: absolute;
+			bottom:0;
+			width:100%;
+			height:60px;
+			text-align: center;
+			}
+			.foot{
+			text-align: center;
+			}
+			
+</style>
 
-<div class="ui inverted vertical footer segment form-page">
-	<div class="ui container">Harokopio University</div>
+
+
+
+<div class="footer">
+	<div class="container">	<p> Σύστημα Διαχείρησης Συγγραμμάτων  ©Copyright2019  
+		<br><a class="foot" href="<c:url value="/termsOfUse"></c:url>">Όροι Χρήσης</a></p>
+	</div>
+	
 </div>
 </body>
 </html>

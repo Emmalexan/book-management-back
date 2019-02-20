@@ -18,7 +18,7 @@
   	</tr>
   	
     <tr>
-    <td><input type="submit" value="Select"/></td>
+    <td><input type="submit" value="Επιλογή"/></td>
     </tr>
 
     </table>
